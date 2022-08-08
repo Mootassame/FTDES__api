@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/thematique`,
+    require('./thematiqueCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/thematique/:id`,
+    require('./thematiqueUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/thematique/import`,
+    require('./thematiqueImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/thematique`,
+    require('./thematiqueDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/thematique/autocomplete`,
+    require('./thematiqueAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/thematique`,
+    require('./thematiqueList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/thematique/:id`,
+    require('./thematiqueFind').default,
+  );
+};

@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/category-publication`,
+    require('./categoryPublicationCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/category-publication/:id`,
+    require('./categoryPublicationUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/category-publication/import`,
+    require('./categoryPublicationImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/category-publication`,
+    require('./categoryPublicationDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/category-publication/autocomplete`,
+    require('./categoryPublicationAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/category-publication`,
+    require('./categoryPublicationList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/category-publication/:id`,
+    require('./categoryPublicationFind').default,
+  );
+};

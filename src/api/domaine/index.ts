@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/domaine`,
+    require('./domaineCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/domaine/:id`,
+    require('./domaineUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/domaine/import`,
+    require('./domaineImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/domaine`,
+    require('./domaineDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/domaine/autocomplete`,
+    require('./domaineAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/domaine`,
+    require('./domaineList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/domaine/:id`,
+    require('./domaineFind').default,
+  );
+};

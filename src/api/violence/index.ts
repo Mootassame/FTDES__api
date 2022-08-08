@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/violence`,
+    require('./violenceCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/violence/:id`,
+    require('./violenceUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/violence/import`,
+    require('./violenceImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/violence`,
+    require('./violenceDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/violence/autocomplete`,
+    require('./violenceAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/violence`,
+    require('./violenceList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/violence/:id`,
+    require('./violenceFind').default,
+  );
+};

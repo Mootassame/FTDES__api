@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/demande-appui`,
+    require('./demandeAppuiCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/demande-appui/:id`,
+    require('./demandeAppuiUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/demande-appui/import`,
+    require('./demandeAppuiImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/demande-appui`,
+    require('./demandeAppuiDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/demande-appui/autocomplete`,
+    require('./demandeAppuiAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/demande-appui`,
+    require('./demandeAppuiList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/demande-appui/:id`,
+    require('./demandeAppuiFind').default,
+  );
+};

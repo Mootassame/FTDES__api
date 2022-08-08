@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/apropos`,
+    require('./aproposCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/apropos/:id`,
+    require('./aproposUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/apropos/import`,
+    require('./aproposImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/apropos`,
+    require('./aproposDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/apropos/autocomplete`,
+    require('./aproposAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/apropos`,
+    require('./aproposList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/apropos/:id`,
+    require('./aproposFind').default,
+  );
+};

@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/evenement`,
+    require('./evenementCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/evenement/:id`,
+    require('./evenementUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/evenement/import`,
+    require('./evenementImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/evenement`,
+    require('./evenementDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/evenement/autocomplete`,
+    require('./evenementAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/evenement`,
+    require('./evenementList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/evenement/:id`,
+    require('./evenementFind').default,
+  );
+};

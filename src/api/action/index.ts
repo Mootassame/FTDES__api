@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/action`,
+    require('./actionCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/action/:id`,
+    require('./actionUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/action/import`,
+    require('./actionImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/action`,
+    require('./actionDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/action/autocomplete`,
+    require('./actionAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/action`,
+    require('./actionList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/action/:id`,
+    require('./actionFind').default,
+  );
+};

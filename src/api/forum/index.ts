@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/forum`,
+    require('./forumCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/forum/:id`,
+    require('./forumUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/forum/import`,
+    require('./forumImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/forum`,
+    require('./forumDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/forum/autocomplete`,
+    require('./forumAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/forum`,
+    require('./forumList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/forum/:id`,
+    require('./forumFind').default,
+  );
+};

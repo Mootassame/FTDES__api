@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/mouvement`,
+    require('./mouvementCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/mouvement/:id`,
+    require('./mouvementUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/mouvement/import`,
+    require('./mouvementImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/mouvement`,
+    require('./mouvementDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/mouvement/autocomplete`,
+    require('./mouvementAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/mouvement`,
+    require('./mouvementList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/mouvement/:id`,
+    require('./mouvementFind').default,
+  );
+};

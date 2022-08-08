@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/espace-artistique`,
+    require('./espaceArtistiqueCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/espace-artistique/:id`,
+    require('./espaceArtistiqueUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/espace-artistique/import`,
+    require('./espaceArtistiqueImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/espace-artistique`,
+    require('./espaceArtistiqueDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/espace-artistique/autocomplete`,
+    require('./espaceArtistiqueAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/espace-artistique`,
+    require('./espaceArtistiqueList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/espace-artistique/:id`,
+    require('./espaceArtistiqueFind').default,
+  );
+};

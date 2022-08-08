@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/category-appel`,
+    require('./categoryAppelCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/category-appel/:id`,
+    require('./categoryAppelUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/category-appel/import`,
+    require('./categoryAppelImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/category-appel`,
+    require('./categoryAppelDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/category-appel/autocomplete`,
+    require('./categoryAppelAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/category-appel`,
+    require('./categoryAppelList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/category-appel/:id`,
+    require('./categoryAppelFind').default,
+  );
+};

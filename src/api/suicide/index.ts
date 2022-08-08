@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/suicide`,
+    require('./suicideCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/suicide/:id`,
+    require('./suicideUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/suicide/import`,
+    require('./suicideImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/suicide`,
+    require('./suicideDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/suicide/autocomplete`,
+    require('./suicideAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/suicide`,
+    require('./suicideList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/suicide/:id`,
+    require('./suicideFind').default,
+  );
+};

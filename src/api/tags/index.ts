@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/tags`,
+    require('./tagsCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/tags/:id`,
+    require('./tagsUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/tags/import`,
+    require('./tagsImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/tags`,
+    require('./tagsDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/tags/autocomplete`,
+    require('./tagsAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/tags`,
+    require('./tagsList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/tags/:id`,
+    require('./tagsFind').default,
+  );
+};

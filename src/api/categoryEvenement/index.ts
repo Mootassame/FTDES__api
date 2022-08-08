@@ -1,0 +1,30 @@
+export default (app) => {
+  app.post(
+    `/tenant/:tenantId/category-evenement`,
+    require('./categoryEvenementCreate').default,
+  );
+  app.put(
+    `/tenant/:tenantId/category-evenement/:id`,
+    require('./categoryEvenementUpdate').default,
+  );
+  app.post(
+    `/tenant/:tenantId/category-evenement/import`,
+    require('./categoryEvenementImport').default,
+  );
+  app.delete(
+    `/tenant/:tenantId/category-evenement`,
+    require('./categoryEvenementDestroy').default,
+  );
+  app.get(
+    `/tenant/:tenantId/category-evenement/autocomplete`,
+    require('./categoryEvenementAutocomplete').default,
+  );
+  app.get(
+    `/tenant/:tenantId/category-evenement`,
+    require('./categoryEvenementList').default,
+  );
+  app.get(
+    `/tenant/:tenantId/category-evenement/:id`,
+    require('./categoryEvenementFind').default,
+  );
+};
